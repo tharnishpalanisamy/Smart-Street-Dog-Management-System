@@ -15,7 +15,7 @@ const sampleData = {
       sterilization_date: "2025-08-15",
       gender: "Female",
       age_estimate: "3 years",
-      notes: "Friendly dog, regular feeding spot near metro. Well-socialized with humans.",
+      notes: "Friendly dog, regular feeding spot near Ground. Well-socialized with humans.",
       last_seen: "2025-08-15",
       health_status: "Good"
     },
