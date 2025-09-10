@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Street Dog Management System - Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Login Page -->
+    <div id="login-page" class="page active">
+      <div class="login-container">
+        <div class="login-card">
+          <div class="login-header">
+            <h1>Street Dog Management System</h1>
+            <p>Protecting and caring for India's street dogs</p>
+          </div>
+          <form id="login-form" class="login-form">
+            <div class="form-group">
+              <label for="username" class="form-label">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-control"
+                value="demo"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                value="streetdog123"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn--primary btn--full-width"
+              id="login-btn"
+            >
+              Login
+            </button>
+            <div class="demo-credentials">
+              <small
+                >Demo credentials: username: <strong>demo</strong> | password:
+                <strong>streetdog123</strong></small
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="app" class="app hidden">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="header-left">
+            <button class="menu-toggle" id="menu-toggle">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+            <div class="logo">
+              <h1>Street Dog Management</h1>
+            </div>
+          </div>
+          <nav class="nav-desktop">
+            <a
+              href="donate.html"
+              class="btn btn--secondary"
+              style="background: rgb(21, 128, 61)"
+              onmouseover="this.style.backgroundColor='rgb(30, 150, 70)';"
+              onmouseout="this.style.backgroundColor='rgb(21, 128, 61)';"
+              >Donate</a
+            >
+            <button class="btn btn--ghost" onclick="logout()">Logout</button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="nav-items">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="search.html" class="nav-item">Search Dog ID</a>
+            <a href="about.html" class="nav-item">Info</a>
+            <a href="rabies.html" class="nav-item">About Rabies</a>
+            <a href="report.html" class="nav-item">Report</a>
+            <a href="volunteers.html" class="nav-item">Volunteers</a>
+            <a href="donate.html" class="nav-item">Donate</a>
+            <a href="feedback.html" class="nav-item">Feedback</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="page-header">
+          <!-- Quick Actions -->
+          <div class="quick-actions">
+            <h3>Quick Actions</h3>
+            <div class="action-buttons">
+              <a href="search.html" class="btn btn--primary btn--large">
+                Search Dog ID
+              </a>
+              <a
+                href="report.html"
+                class="btn btn--secondary btn--large"
+                style="background: red"
+                onmouseover="this.style.backgroundColor='rgb(220, 20, 60)';"
+                onmouseout="this.style.backgroundColor='rgb(255, 0, 0)';"
+              >
+                Report a Dog
+              </a>
+            </div>
+          </div>
+          <br />
+
+          <h2>Dashboard</h2>
+          <p>Overview of street dog management activities</p>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Dogs Registered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Dogs Vaccinated</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Dogs Sterilized</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Active Volunteers</div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+<script></script>

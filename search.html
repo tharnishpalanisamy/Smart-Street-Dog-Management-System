@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Dog ID - Street Dog Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="header-left">
+            <button class="menu-toggle" id="menu-toggle">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+            <div class="logo">
+              <h1>Street Dog Management</h1>
+            </div>
+          </div>
+          <nav class="nav-desktop">
+            <a
+              href="donate.html"
+              class="btn btn--secondary"
+              style="background: rgb(21, 128, 61)"
+              onmouseover="this.style.backgroundColor='rgb(30, 150, 70)';"
+              onmouseout="this.style.backgroundColor='rgb(21, 128, 61)';"
+              >Donate</a
+            >
+            <button class="btn btn--ghost" onclick="logout()">Logout</button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="nav-items">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="search.html" class="nav-item active">Search Dog ID</a>
+            <a href="about.html" class="nav-item">Info</a>
+            <a href="rabies.html" class="nav-item">About Rabies</a>
+            <a href="report.html" class="nav-item">Report</a>
+            <a href="volunteers.html" class="nav-item">Volunteers</a>
+            <a href="donate.html" class="nav-item">Donate</a>
+            <a href="feedback.html" class="nav-item">Feedback</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="page-header">
+          <h2>Search Dog ID</h2>
+          <p>Enter a dog's unique ID to view its information</p>
+        </div>
+
+        <div class="search-section">
+          <form id="search-form" class="search-form">
+            <div class="form-group">
+              <label for="dog-id" class="form-label">Dog ID</label>
+              <input
+                type="text"
+                id="dog-id"
+                name="dog-id"
+                class="form-control"
+                placeholder="e.g., DEL-001-DOG123"
+                required
+              />
+              <small class="form-help">Format: DISTRICT-AREA-DOGID</small>
+            </div>
+            <button type="submit" class="btn btn--primary">Search</button>
+          </form>
+        </div>
+
+        <div id="search-results" class="search-results hidden">
+          <!-- Results will be populated by JavaScript -->
+        </div>
+        <h4 style="color: red; text-align: center; margin-top: 20px">
+          Still Under Development
+        </h4>
+      </main>
+      <!-- Add this at the end of your main content, before </main> -->
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

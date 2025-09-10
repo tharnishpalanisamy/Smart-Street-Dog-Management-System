@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate - Street Dog Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="header-left">
+            <button class="menu-toggle" id="menu-toggle">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+            <div class="logo">
+              <h1>Street Dog Management</h1>
+            </div>
+          </div>
+          <nav class="nav-desktop">
+            <a
+              href="donate.html"
+              class="btn btn--secondary"
+              style="background: rgb(21, 128, 61)"
+              onmouseover="this.style.backgroundColor='rgb(30, 150, 70)';"
+              onmouseout="this.style.backgroundColor='rgb(21, 128, 61)';"
+              >Donate</a
+            >
+            <button class="btn btn--ghost" onclick="logout()">Logout</button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="nav-items">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="search.html" class="nav-item">Search Dog ID</a>
+            <a href="about.html" class="nav-item">Info</a>
+            <a href="rabies.html" class="nav-item">About Rabies</a>
+            <a href="report.html" class="nav-item">Report</a>
+            <a href="volunteers.html" class="nav-item">Volunteers</a>
+            <a href="donate.html" class="nav-item active">Donate</a>
+            <a href="feedback.html" class="nav-item">Feedback</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="page-header">
+          <h2>Support Our Mission</h2>
+          <p>
+            Your donation helps us create safer communities for both humans and
+            street dogs
+          </p>
+        </div>
+
+        <div class="content-section">
+          <div class="alert alert--success">
+            <strong>Every Donation Counts!</strong> Your contribution directly
+            supports life-saving veterinary care, sterilization programs, and
+            community safety initiatives.
+          </div>
+
+          <h3>How Your Donation Helps</h3>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 1.5rem;
+              margin: 2rem 0;
+            "
+          >
+            <div class="stat-card">
+              <div class="stat-number">₹500</div>
+              <div class="stat-label">Complete Vaccination</div>
+              <p>
+                Provides full rabies vaccination for one dog, protecting both
+                the animal and community for one year.
+              </p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-number">₹1,500</div>
+              <div class="stat-label">Sterilization Surgery</div>
+              <p>
+                Covers complete sterilization procedure including anesthesia,
+                surgery, and post-operative care.
+              </p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-number">₹200</div>
+              <div class="stat-label">Identification Collar</div>
+              <p>
+                Provides a durable collar with unique ID tag and QR code for
+                lifetime identification.
+              </p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-number">₹3,000</div>
+              <div class="stat-label">Emergency Rescue</div>
+              <p>
+                Covers emergency veterinary treatment, medication, and
+                rehabilitation for injured dogs.
+              </p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-number">₹100</div>
+              <div class="stat-label">Daily Feeding</div>
+              <p>
+                Provides nutritious meals for 10 dogs for one day, ensuring
+                proper nutrition and health.
+              </p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-number">₹5,000</div>
+              <div class="stat-label">Mobile Clinic Day</div>
+              <p>
+                Funds one day of mobile veterinary services, reaching 15-20 dogs
+                in underserved areas.
+              </p>
+            </div>
+          </div>
+
+          <h3>Donation Options</h3>
+          <div class="quick-actions">
+            <h4>One-Time Donation</h4>
+            <div
+              class="action-buttons"
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+              "
+            >
+              <button
+                class="btn btn--primary"
+                onclick="selectDonationAmount(500)"
+              >
+                ₹500
+              </button>
+              <button
+                class="btn btn--primary"
+                onclick="selectDonationAmount(1000)"
+              >
+                ₹1,000
+              </button>
+              <button
+                class="btn btn--primary"
+                onclick="selectDonationAmount(2500)"
+              >
+                ₹2,500
+              </button>
+              <button
+                class="btn btn--primary"
+                onclick="selectDonationAmount(5000)"
+              >
+                ₹5,000
+              </button>
+              <button class="btn btn--secondary" onclick="showCustomAmount()">
+                Custom Amount
+              </button>
+            </div>
+          </div>
+
+          <div id="donation-form" class="hidden" style="margin: 2rem 0">
+            <h4>Complete Your Donation</h4>
+            <form id="donation-details" class="report-form">
+              <div class="form-group">
+                <label for="donation-amount" class="form-label"
+                  >Donation Amount (₹)</label
+                >
+                <input
+                  type="number"
+                  id="donation-amount"
+                  name="donation-amount"
+                  class="form-control"
+                  min="100"
+                  step="100"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="donor-name" class="form-label">Your Name</label>
+                <input
+                  type="text"
+                  id="donor-name"
+                  name="donor-name"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="donor-email" class="form-label"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="donor-email"
+                  name="donor-email"
+                  class="form-control"
+                  required
+                />
+                <small class="form-help"
+                  >For donation receipt and updates</small
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="donor-phone" class="form-label"
+                  >Phone Number (Optional)</label
+                >
+                <input
+                  type="tel"
+                  id="donor-phone"
+                  name="donor-phone"
+                  class="form-control"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="donation-purpose" class="form-label"
+                  >Donation Purpose (Optional)</label
+                >
+                <select
+                  id="donation-purpose"
+                  name="donation-purpose"
+                  class="form-control"
+                >
+                  <option value="">General Support</option>
+                  <option value="vaccination">Vaccination Programs</option>
+                  <option value="sterilization">
+                    Sterilization Operations
+                  </option>
+                  <option value="emergency">Emergency Rescue</option>
+                  <option value="feeding">Feeding Programs</option>
+                  <option value="equipment">Medical Equipment</option>
+                </select>
+              </div>
+
+              <div
+                style="
+                  background: var(--color-gray-200);
+                  padding: 1rem;
+                  border-radius: 0.5rem;
+                  margin: 1rem 0;
+                "
+              >
+                <h5>Payment Methods</h5>
+                <p>Secure payment processing through:</p>
+                <ul>
+                  <li>Credit/Debit Cards (Visa, Mastercard, RuPay)</li>
+                  <li>UPI (Google Pay, PhonePe, Paytm)</li>
+                  <li>Net Banking</li>
+                  <li>Digital Wallets</li>
+                </ul>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--large">
+                Proceed to Payment
+              </button>
+            </form>
+          </div>
+
+          <h3>Monthly Giving Program</h3>
+          <div
+            style="
+              background: var(--color-teal-300);
+              color: white;
+              padding: 1.5rem;
+              border-radius: 0.5rem;
+              margin: 2rem 0;
+            "
+          >
+            <h4>Become a Monthly Supporter</h4>
+            <p>
+              Join our community of regular supporters who provide consistent
+              funding for our programs. Monthly donors receive:
+            </p>
+            <ul>
+              <li>Quarterly impact reports with photos and stories</li>
+              <li>Priority updates on new initiatives</li>
+              <li>Annual appreciation certificate</li>
+              <li>Special volunteer event invitations</li>
+            </ul>
+            <button
+              class="btn btn--secondary"
+              onclick="setupMonthlyDonation()"
+              style="margin-top: 1rem"
+              onmouseover="this.style.backgroundColor='rgb(30, 150, 70)';"
+              onmouseout="this.style.backgroundColor='rgb(21, 128, 61)';"
+            >
+              Set Up Monthly Giving
+            </button>
+          </div>
+
+          <h3>Other Ways to Support</h3>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 1.5rem;
+              margin: 2rem 0;
+            "
+          >
+            <div
+              style="
+                background: var(--color-gray-200);
+                padding: 1.5rem;
+                border-radius: 0.5rem;
+              "
+            >
+              <h4>Corporate Sponsorship</h4>
+              <p>
+                Partner with us for CSR initiatives and employee engagement
+                programs.
+              </p>
+              <ul>
+                <li>Sponsor a mobile clinic</li>
+                <li>Fund collar manufacturing</li>
+                <li>Support training programs</li>
+              </ul>
+              <a
+                href="mailto:corporate@streetdogcare.org"
+                class="btn btn--primary"
+                >Contact Us</a
+              >
+            </div>
+
+            <div
+              style="
+                background: var(--color-gray-200);
+                padding: 1.5rem;
+                border-radius: 0.5rem;
+              "
+            >
+              <h4>In-Kind Donations</h4>
+              <p>
+                Donate supplies and equipment that directly support our
+                operations.
+              </p>
+              <ul>
+                <li>Medical supplies and medicines</li>
+                <li>Dog food and feeding bowls</li>
+                <li>Transportation vehicles</li>
+              </ul>
+              <a
+                href="mailto:donations@streetdogcare.org"
+                class="btn btn--primary"
+                >Learn More</a
+              >
+            </div>
+
+            <div
+              style="
+                background: var(--color-gray-200);
+                padding: 1.5rem;
+                border-radius: 0.5rem;
+              "
+            >
+              <h4>Legacy Giving</h4>
+              <p>
+                Include our mission in your will or estate planning for lasting
+                impact.
+              </p>
+              <ul>
+                <li>Endowment funds</li>
+                <li>Named programs</li>
+                <li>Memorial donations</li>
+              </ul>
+              <a href="mailto:legacy@streetdogcare.org" class="btn btn--primary"
+                >Get Information</a
+              >
+            </div>
+          </div>
+
+          <h3>Impact Transparency</h3>
+          <div
+            style="
+              background: var(--color-surface);
+              border: 1px solid var(--color-border-light);
+              padding: 1.5rem;
+              border-radius: 0.5rem;
+              margin: 2rem 0;
+            "
+          >
+            <h4>Current Campaign Progress</h4>
+            <div class="stats-grid" style="margin: 1rem 0">
+              <div class="stat-card">
+                <div class="stat-number">₹0</div>
+                <div class="stat-label">Total Raised</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Dogs Helped</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Active Donors</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Communities Served</div>
+              </div>
+            </div>
+          </div>
+
+          <h3>Tax Benefits & Receipts</h3>
+          <ul>
+            <li>
+              <strong>80G Tax Exemption:</strong> All donations are eligible for
+              tax deduction under Section 80G of the Income Tax Act
+            </li>
+            <li>
+              <strong>Immediate Receipts:</strong> Donation receipts are emailed
+              automatically after payment
+            </li>
+            <li>
+              <strong>Annual Statements:</strong> Comprehensive annual donation
+              statements for tax filing
+            </li>
+            <li>
+              <strong>Transparency:</strong> Annual financial reports available
+              on request
+            </li>
+          </ul>
+
+          <div
+            style="
+              background: var(--color-orange-400);
+              color: white;
+              padding: 1.5rem;
+              border-radius: 0.5rem;
+              margin: 2rem 0;
+            "
+          >
+            <h4>Questions About Donating?</h4>
+            <p><strong>Contact our Donation Team:</strong></p>
+            <p>Email: donations@streetdogcare.org</p>
+            <p>Phone: +91-11-XXXX-XXXX</p>
+            <p>WhatsApp: +91-XXXXX-XXXXX</p>
+          </div>
+          <div style="margin: 2rem 0; text-align: center">
+            <span style="color: #d32f2f; font-weight: 700; font-size: 1.2rem">
+              Still in development
+            </span>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

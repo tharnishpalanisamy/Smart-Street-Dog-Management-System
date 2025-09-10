@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Rabies - Street Dog Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="header-left">
+            <button class="menu-toggle" id="menu-toggle">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+            <div class="logo">
+              <h1>Street Dog Management</h1>
+            </div>
+          </div>
+          <nav class="nav-desktop">
+            <a
+              href="donate.html"
+              class="btn btn--secondary"
+              style="background: rgb(21, 128, 61)"
+              onmouseover="this.style.backgroundColor='rgb(30, 150, 70)';"
+              onmouseout="this.style.backgroundColor='rgb(21, 128, 61)';"
+              >Donate</a
+            >
+            <button class="btn btn--ghost" onclick="logout()">Logout</button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="nav-items">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="search.html" class="nav-item">Search Dog ID</a>
+            <a href="about.html" class="nav-item">Info</a>
+            <a href="rabies.html" class="nav-item active">About Rabies</a>
+            <a href="report.html" class="nav-item">Report</a>
+            <a href="volunteers.html" class="nav-item">Volunteers</a>
+            <a href="donate.html" class="nav-item">Donate</a>
+            <a href="feedback.html" class="nav-item">Feedback</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="page-header">
+          <h2>About Rabies</h2>
+          <p>
+            Critical information about rabies prevention, symptoms, and
+            treatment
+          </p>
+        </div>
+
+        <div class="content-section">
+          <div class="alert alert--warning">
+            <strong>Important:</strong> Rabies is a serious viral disease that
+            is almost always fatal once symptoms appear. Immediate medical
+            attention is crucial after any animal bite.
+          </div>
+
+          <h3>What is Rabies?</h3>
+          <p>
+            Rabies is a viral disease that affects the central nervous system of
+            mammals, including humans. The virus is typically transmitted
+            through the saliva of infected animals via bites or scratches. Once
+            clinical symptoms appear, rabies is almost invariably fatal, making
+            prevention absolutely critical.
+          </p>
+
+          <h3>How Rabies Spreads</h3>
+          <ul>
+            <li>
+              <strong>Animal Bites:</strong> The most common transmission route,
+              especially from dogs, cats, bats, and wild animals
+            </li>
+            <li>
+              <strong>Scratches:</strong> Deep scratches from infected animals
+              can transmit the virus
+            </li>
+            <li>
+              <strong>Open Wounds:</strong> Contact between infected saliva and
+              open wounds or mucous membranes
+            </li>
+            <li>
+              <strong>Note:</strong> Rabies is not transmitted through touching
+              or petting an infected animal, or through contact with their
+              blood, urine, or feces
+            </li>
+          </ul>
+
+          <h3>Symptoms in Animals</h3>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 1.5rem;
+              margin: 1.5rem 0;
+            "
+          >
+            <div>
+              <h4>Early Signs</h4>
+              <ul>
+                <li>Behavioral changes</li>
+                <li>Loss of appetite</li>
+                <li>Fever</li>
+                <li>Difficulty swallowing</li>
+                <li>Excessive drooling</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Advanced Symptoms</h4>
+              <ul>
+                <li>Aggressive behavior</li>
+                <li>Paralysis</li>
+                <li>Seizures</li>
+                <li>Hydrophobia (fear of water)</li>
+                <li>Disorientation</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Prevention Strategies</h3>
+          <div class="alert alert--success">
+            <strong>Prevention is the best protection against rabies!</strong>
+          </div>
+
+          <ul>
+            <li>
+              <strong>Vaccinate Your Pets:</strong> Ensure all dogs and cats
+              receive regular rabies vaccinations
+            </li>
+            <li>
+              <strong>Avoid Stray Animals:</strong> Don't approach or feed
+              unknown animals, especially if they appear sick
+            </li>
+            <li>
+              <strong>Report Suspicious Animals:</strong> Contact authorities if
+              you see animals behaving strangely
+            </li>
+            <li>
+              <strong>Educate Your Family:</strong> Teach children never to
+              approach unknown animals
+            </li>
+            <li>
+              <strong>Secure Your Property:</strong> Keep pet food indoors and
+              seal garbage to avoid attracting wild animals
+            </li>
+          </ul>
+
+          <h3>What to Do After an Animal Bite</h3>
+          <div class="alert alert--error">
+            <strong>Emergency Action Required:</strong> Follow these steps
+            immediately after any animal bite.
+          </div>
+
+          <ol>
+            <li>
+              <strong>Clean the Wound (First 15 minutes):</strong>
+              <ul>
+                <li>
+                  Wash thoroughly with soap and running water for at least 15
+                  minutes
+                </li>
+                <li>
+                  Apply antiseptic (iodine, alcohol, or hydrogen peroxide)
+                </li>
+                <li>Do not close the wound with bandages initially</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Seek Immediate Medical Attention:</strong>
+              <ul>
+                <li>Go to the nearest hospital or clinic immediately</li>
+                <li>Contact your doctor or emergency services</li>
+                <li>Time is critical - do not delay</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Gather Information:</strong>
+              <ul>
+                <li>Try to identify the animal (species, size, color)</li>
+                <li>Note the animal's behavior and location</li>
+                <li>Take photos if safely possible</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Report the Incident:</strong>
+              <ul>
+                <li>Contact local animal control authorities</li>
+                <li>Report to police if necessary</li>
+                <li>Use our reporting system to log the incident</li>
+              </ul>
+            </li>
+          </ol>
+
+          <h3>Post-Exposure Treatment</h3>
+          <p>
+            If you've been bitten by an animal that might have rabies, you will
+            likely need:
+          </p>
+          <ul>
+            <li>
+              <strong>Rabies Immune Globulin (RIG):</strong> Provides immediate
+              protection
+            </li>
+            <li>
+              <strong>Rabies Vaccine Series:</strong> Usually 4-5 doses over
+              14-28 days
+            </li>
+            <li>
+              <strong>Wound Care:</strong> Professional cleaning and tetanus
+              shot if needed
+            </li>
+            <li>
+              <strong>Follow-up Care:</strong> Monitor for any signs of
+              infection
+            </li>
+          </ul>
+
+          <h3>Rabies in India</h3>
+          <p>
+            India accounts for approximately 36% of global rabies deaths, with
+            an estimated 18,000-20,000 fatalities annually. Key facts:
+          </p>
+          <ul>
+            <li>Dogs are responsible for 97% of human rabies cases in India</li>
+            <li>Children aged 5-15 are at highest risk</li>
+            <li>Rural areas have limited access to post-exposure treatment</li>
+            <li>
+              Mass dog vaccination programs are the most effective prevention
+              strategy
+            </li>
+          </ul>
+
+          <h3>Emergency Contacts</h3>
+          <div
+            style="
+              background: var(--color-red-400);
+              color: white;
+              padding: 1.5rem;
+              border-radius: 0.5rem;
+              margin: 2rem 0;
+            "
+          >
+            <h4>Rabies Emergency Helpline: 1800-XXX-RABIES</h4>
+            <p>
+              <strong>Available 24/7 for rabies-related emergencies</strong>
+            </p>
+            <p>
+              For immediate medical advice, hospital locations, and
+              post-exposure treatment guidance.
+            </p>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 1rem;
+              margin-top: 1.5rem;
+            "
+          >
+            <div
+              style="
+                background: var(--color-gray-200);
+                padding: 1rem;
+                border-radius: 0.5rem;
+              "
+            >
+              <h4>National Helpline</h4>
+              <p><strong>104</strong><br />Government Health Helpline</p>
+            </div>
+            <div
+              style="
+                background: var(--color-gray-200);
+                padding: 1rem;
+                border-radius: 0.5rem;
+              "
+            >
+              <h4>Emergency Services</h4>
+              <p><strong>108</strong><br />Ambulance Services</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

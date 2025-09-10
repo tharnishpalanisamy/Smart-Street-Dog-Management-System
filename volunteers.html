@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteers - Street Dog Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="header-left">
+            <button class="menu-toggle" id="menu-toggle">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+            <div class="logo">
+              <h1>Street Dog Management</h1>
+            </div>
+          </div>
+          <nav class="nav-desktop">
+            <a
+              href="donate.html"
+              class="btn btn--secondary"
+              style="background: rgb(21, 128, 61)"
+              onmouseover="this.style.backgroundColor='rgb(30, 150, 70)';"
+              onmouseout="this.style.backgroundColor='rgb(21, 128, 61)';"
+              >Donate</a
+            >
+            <button class="btn btn--ghost" onclick="logout()">Logout</button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="nav-items">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="search.html" class="nav-item">Search Dog ID</a>
+            <a href="about.html" class="nav-item">Info</a>
+            <a href="rabies.html" class="nav-item">About Rabies</a>
+            <a href="report.html" class="nav-item">Report</a>
+            <a href="volunteers.html" class="nav-item active">Volunteers</a>
+            <a href="donate.html" class="nav-item">Donate</a>
+            <a href="feedback.html" class="nav-item">Feedback</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="page-header">
+          <h2>Join Our Volunteer Team</h2>
+          <p>
+            Make a difference in the lives of street dogs and your community
+          </p>
+        </div>
+
+        <div class="content-section">
+          <div class="alert alert--success">
+            <strong>Thank you for your interest in volunteering!</strong> Every
+            helping hand makes a significant impact in our mission to create a
+            safer, more humane environment for both dogs and humans.
+          </div>
+
+          <h3>Why Volunteer With Us?</h3>
+          <ul>
+            <li>
+              <strong>Make a Real Impact:</strong> Directly contribute to
+              reducing street dog populations and improving animal welfare
+            </li>
+            <li>
+              <strong>Learn New Skills:</strong> Gain experience in animal
+              handling, veterinary care, and community outreach
+            </li>
+            <li>
+              <strong>Community Building:</strong> Connect with like-minded
+              individuals who care about animal welfare
+            </li>
+            <li>
+              <strong>Flexible Commitment:</strong> Choose volunteer
+              opportunities that fit your schedule and interests
+            </li>
+            <li>
+              <strong>Professional Development:</strong> Gain valuable
+              experience for careers in veterinary science, social work, or
+              animal care
+            </li>
+          </ul>
+
+          <h3>Volunteer Opportunities</h3>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 1.5rem;
+              margin: 2rem 0;
+            "
+          >
+            <div class="stat-card">
+              <h4>Field Operations</h4>
+              <ul>
+                <li>Assist in dog rescue operations</li>
+                <li>Support veterinary teams during ABC procedures</li>
+                <li>Help with post-operative care and monitoring</li>
+                <li>Transport dogs to and from treatment centers</li>
+              </ul>
+              <p><strong>Time Commitment:</strong> 4-8 hours per week</p>
+            </div>
+
+            <div class="stat-card">
+              <h4>Community Outreach</h4>
+              <ul>
+                <li>Conduct awareness programs in schools and communities</li>
+                <li>Distribute educational materials</li>
+                <li>Organize vaccination camps</li>
+                <li>Train local community members</li>
+              </ul>
+              <p><strong>Time Commitment:</strong> 3-6 hours per week</p>
+            </div>
+
+            <div class="stat-card">
+              <h4>Data Management</h4>
+              <ul>
+                <li>Update dog information in database</li>
+                <li>Process and verify reports</li>
+                <li>Maintain digital records</li>
+                <li>Generate statistical reports</li>
+              </ul>
+              <p><strong>Time Commitment:</strong> 2-4 hours per week</p>
+            </div>
+
+            <div class="stat-card">
+              <h4>Administrative Support</h4>
+              <ul>
+                <li>Coordinate volunteer schedules</li>
+                <li>Manage supplies and equipment</li>
+                <li>Assist with fundraising events</li>
+                <li>Handle correspondence</li>
+              </ul>
+              <p><strong>Time Commitment:</strong> 3-5 hours per week</p>
+            </div>
+
+            <div class="stat-card">
+              <h4>Emergency Response</h4>
+              <ul>
+                <li>Respond to urgent rescue calls</li>
+                <li>Provide first aid to injured dogs</li>
+                <li>Handle aggressive dog situations</li>
+                <li>Coordinate with veterinary services</li>
+              </ul>
+              <p><strong>Time Commitment:</strong> On-call basis</p>
+            </div>
+
+            <div class="stat-card">
+              <h4>Feeding Programs</h4>
+              <ul>
+                <li>Organize regular feeding schedules</li>
+                <li>Prepare and distribute nutritious food</li>
+                <li>Monitor dog health during feeding</li>
+                <li>Maintain feeding location records</li>
+              </ul>
+              <p><strong>Time Commitment:</strong> 2-3 hours per week</p>
+            </div>
+          </div>
+
+          <h3>Volunteer Requirements</h3>
+          <div
+            style="
+              background: var(--color-gray-200);
+              padding: 1.5rem;
+              border-radius: 0.5rem;
+              margin: 1.5rem 0;
+            "
+          >
+            <h4>General Requirements</h4>
+            <ul>
+              <li>
+                <strong>Age:</strong> Minimum 18 years (16-17 with parental
+                consent)
+              </li>
+              <li>
+                <strong>Health:</strong> Good physical health and current
+                tetanus vaccination
+              </li>
+              <li>
+                <strong>Commitment:</strong> Minimum 3-month commitment
+                preferred
+              </li>
+              <li>
+                <strong>Training:</strong> Complete mandatory orientation and
+                safety training
+              </li>
+              <li>
+                <strong>Background Check:</strong> Basic verification for safety
+                purposes
+              </li>
+            </ul>
+
+            <h4>Specialized Roles</h4>
+            <ul>
+              <li>
+                <strong>Field Operations:</strong> Experience with animals
+                preferred, physical fitness required
+              </li>
+              <li>
+                <strong>Data Management:</strong> Basic computer skills,
+                attention to detail
+              </li>
+              <li>
+                <strong>Community Outreach:</strong> Good communication skills,
+                local language fluency
+              </li>
+              <li>
+                <strong>Emergency Response:</strong> Previous animal handling
+                experience, availability for urgent calls
+              </li>
+            </ul>
+          </div>
+
+          <h3>Training Program</h3>
+          <p>
+            All volunteers undergo comprehensive training to ensure safety and
+            effectiveness:
+          </p>
+          <ul>
+            <li>
+              <strong>Orientation Session (2 hours):</strong> Program overview,
+              policies, and procedures
+            </li>
+            <li>
+              <strong>Animal Safety Training (4 hours):</strong> Safe animal
+              handling, recognizing signs of illness, personal protection
+            </li>
+            <li>
+              <strong>First Aid Certification (6 hours):</strong> Basic first
+              aid for both animals and humans
+            </li>
+            <li>
+              <strong>Role-Specific Training (2-8 hours):</strong> Detailed
+              training for your chosen volunteer role
+            </li>
+            <li>
+              <strong>Ongoing Education:</strong> Monthly workshops and skill
+              development sessions
+            </li>
+          </ul>
+
+          <h3>Volunteer Benefits</h3>
+          <ul>
+            <li>Free training and certification in animal care</li>
+            <li>Transportation allowance for field work</li>
+            <li>Volunteer appreciation events and recognition</li>
+            <li>Letters of recommendation for employment or education</li>
+            <li>Priority access to veterinary care workshops</li>
+            <li>Annual volunteer appreciation awards</li>
+          </ul>
+
+          <h3>How to Apply</h3>
+          <div class="quick-actions">
+            <h4>Ready to Get Started?</h4>
+            <div class="action-buttons">
+              <button
+                class="btn btn--primary btn--large"
+                onclick="showVolunteerForm()"
+              >
+                Apply Now
+              </button>
+              <a
+                href="mailto:volunteers@streetdogcare.org"
+                class="btn btn--secondary btn--large"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+          <div id="volunteer-form" class="hidden" style="margin-top: 2rem">
+            <h4>Volunteer Application Form</h4>
+            <form id="volunteer-application" class="report-form">
+              <div class="form-group">
+                <label for="full-name" class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="full-name"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="age" class="form-label">Age</label>
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  class="form-control"
+                  min="16"
+                  max="80"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="volunteer-type" class="form-label"
+                  >Preferred Volunteer Role</label
+                >
+                <select
+                  id="volunteer-type"
+                  name="volunteer-type"
+                  class="form-control"
+                  required
+                >
+                  <option value="">Select preferred role</option>
+                  <option value="field-operations">Field Operations</option>
+                  <option value="community-outreach">Community Outreach</option>
+                  <option value="data-management">Data Management</option>
+                  <option value="administrative">Administrative Support</option>
+                  <option value="emergency-response">Emergency Response</option>
+                  <option value="feeding-programs">Feeding Programs</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="availability" class="form-label"
+                  >Availability</label
+                >
+                <select
+                  id="availability"
+                  name="availability"
+                  class="form-control"
+                  required
+                >
+                  <option value="">Select availability</option>
+                  <option value="weekdays">Weekdays Only</option>
+                  <option value="weekends">Weekends Only</option>
+                  <option value="flexible">Flexible Schedule</option>
+                  <option value="emergency">Emergency/On-call</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="experience" class="form-label"
+                  >Previous Experience with Animals</label
+                >
+                <textarea
+                  id="experience"
+                  name="experience"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Describe any previous experience with animals or volunteer work"
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="motivation" class="form-label"
+                  >Why do you want to volunteer with us?</label
+                >
+                <textarea
+                  id="motivation"
+                  name="motivation"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Tell us what motivates you to help street dogs"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary">
+                Submit Application
+              </button>
+            </form>
+          </div>
+
+          <h3>Contact Information</h3>
+          <div
+            style="
+              background: var(--color-gray-200);
+              padding: 1.5rem;
+              border-radius: 0.5rem;
+            "
+          >
+            <h4>Volunteer Coordinator</h4>
+            <p><strong>Email:</strong> volunteers@streetdogcare.org</p>
+            <p><strong>Phone:</strong> +91-11-XXXX-XXXX</p>
+            <p><strong>WhatsApp:</strong> +91-XXXXX-XXXXX</p>
+            <p>
+              <strong>Office Hours:</strong> Monday - Friday, 10:00 AM - 5:00 PM
+            </p>
+          </div>
+        </div>
+        <div style="margin: 2rem 0; text-align: center">
+          <span style="color: #d32f2f; font-weight: 700; font-size: 1.2rem">
+            Still in development
+          </span>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

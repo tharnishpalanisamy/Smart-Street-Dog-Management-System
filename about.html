@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Street Dog Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="header-left">
+            <button class="menu-toggle" id="menu-toggle">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+            <div class="logo">
+              <h1>Street Dog Management</h1>
+            </div>
+          </div>
+          <nav class="nav-desktop">
+            <a
+              href="donate.html"
+              class="btn btn--secondary"
+              onmouseover="this.style.backgroundColor='rgb(30, 150, 70)';"
+              onmouseout="this.style.backgroundColor='rgb(21, 128, 61)';"
+              >Donate</a
+            >
+            <button class="btn btn--ghost" onclick="logout()">Logout</button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="nav-items">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="search.html" class="nav-item">Search Dog ID</a>
+            <a href="about.html" class="nav-item active">Info</a>
+            <a href="rabies.html" class="nav-item">About Rabies</a>
+            <a href="report.html" class="nav-item">Report</a>
+            <a href="volunteers.html" class="nav-item">Volunteers</a>
+            <a href="donate.html" class="nav-item">Donate</a>
+            <a href="feedback.html" class="nav-item">Feedback</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="page-header">
+          <h2>About Us</h2>
+          <p>Learn about our street dog management initiative</p>
+        </div>
+
+        <div class="content-section">
+          <h3>Our Mission</h3>
+          <p>
+            We are dedicated to managing street dog populations through humane,
+            scientific methods that prioritize both animal welfare and public
+            safety. Our comprehensive approach combines modern technology with
+            proven veterinary practices to create sustainable solutions for
+            communities across India.
+          </p>
+
+          <h3>How It Works</h3>
+          <ul>
+            <li>
+              <strong>Humane Capture:</strong> Dogs are captured using safe,
+              stress-free methods by trained professionals
+            </li>
+            <li>
+              <strong>Medical Care:</strong> Each dog receives comprehensive
+              health assessment and necessary treatments
+            </li>
+            <li>
+              <strong>Animal Birth Control (ABC):</strong> Sterilization
+              prevents future population growth
+            </li>
+            <li>
+              <strong>Vaccination:</strong> Dogs receive rabies vaccination and
+              other essential immunizations
+            </li>
+            <li>
+              <strong>Unique Identification:</strong> Each dog is fitted with a
+              collar containing a unique digital ID
+            </li>
+            <li>
+              <strong>Database Entry:</strong> All information is recorded in
+              our comprehensive digital database
+            </li>
+            <li>
+              <strong>Territory Return:</strong> Dogs are returned to their
+              original territory after full recovery
+            </li>
+          </ul>
+
+          <h3>Our Approach</h3>
+          <p>
+            Our digital collar system represents a breakthrough in street dog
+            management. Each collar contains:
+          </p>
+          <ul>
+            <li>Unique identification number (District-Area-DogID format)</li>
+            <li>QR code for quick information access</li>
+            <li>Durable, weather-resistant design</li>
+            <li>Comfortable fit that doesn't restrict natural behavior</li>
+          </ul>
+
+          <h3>Impact & Results</h3>
+          <p>
+            Since our program began, we have achieved significant improvements
+            in:
+          </p>
+          <ul>
+            <li>Reduced dog bite incidents in managed areas</li>
+            <li>Improved vaccination coverage against rabies</li>
+            <li>
+              Better coordination between community members and authorities
+            </li>
+            <li>Enhanced public awareness about humane animal treatment</li>
+          </ul>
+
+          <h3>Contact Information</h3>
+          <div
+            style="
+              background: var(--color-gray-200);
+              padding: 1.5rem;
+              border-radius: 0.5rem;
+              margin-top: 1rem;
+            "
+          >
+            <h4>Emergency Helpline</h4>
+            <p><strong>Phone:</strong> 1800-XXX-DOGS (Available 24/7)</p>
+            <p><strong>Email:</strong> emergency@streetdogcare.org</p>
+
+            <h4>Administrative Office</h4>
+            <p>
+              <strong>Address:</strong> Street Dog Management Center<br />
+              Block A, Animal Welfare Complex<br />
+              New Delhi - 110001
+            </p>
+            <p><strong>Phone:</strong> +91-11-XXXX-XXXX</p>
+            <p><strong>Email:</strong> info@streetdogcare.org</p>
+            <p>
+              <strong>Office Hours:</strong> Monday - Friday, 9:00 AM - 6:00 PM
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

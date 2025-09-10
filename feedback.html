@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback - Street Dog Management System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-content">
+          <div class="header-left">
+            <button class="menu-toggle" id="menu-toggle">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+            <div class="logo">
+              <h1>Street Dog Management</h1>
+            </div>
+          </div>
+          <nav class="nav-desktop">
+            <a
+              href="donate.html"
+              class="btn btn--secondary"
+              style="background: rgb(21, 128, 61)"
+              onmouseover="this.style.backgroundColor='rgb(30, 150, 70)';"
+              onmouseout="this.style.backgroundColor='rgb(21, 128, 61)';"
+              >Donate</a
+            >
+            <button class="btn btn--ghost" onclick="logout()">Logout</button>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Sidebar -->
+      <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+          <div class="nav-items">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="search.html" class="nav-item">Search Dog ID</a>
+            <a href="about.html" class="nav-item">Info</a>
+            <a href="rabies.html" class="nav-item">About Rabies</a>
+            <a href="report.html" class="nav-item">Report</a>
+            <a href="volunteers.html" class="nav-item">Volunteers</a>
+            <a href="donate.html" class="nav-item">Donate</a>
+            <a href="feedback.html" class="nav-item active">Feedback</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="page-header">
+          <h2>Share Your Feedback</h2>
+          <p>Your thoughts and suggestions help us improve our services</p>
+        </div>
+
+        <div class="content-section">
+          <div class="alert alert--success">
+            <strong>We Value Your Input!</strong> Your feedback helps us
+            continuously improve our street dog management programs and better
+            serve the community.
+          </div>
+
+          <div class="feedback-section">
+            <form id="feedback-form" class="feedback-form">
+              <div class="form-group">
+                <label for="feedback-type" class="form-label"
+                  >Feedback Category</label
+                >
+                <select
+                  id="feedback-type"
+                  name="feedback-type"
+                  class="form-control"
+                  required
+                >
+                  <option value="">Please select a category</option>
+                  <option value="general-feedback">General Feedback</option>
+                  <option value="website-usability">
+                    Website & System Usability
+                  </option>
+                  <option value="service-quality">Service Quality</option>
+                  <option value="staff-behavior">
+                    Staff & Volunteer Behavior
+                  </option>
+                  <option value="suggestion">Suggestion for Improvement</option>
+                  <option value="complaint">Complaint</option>
+                  <option value="compliment">Compliment</option>
+                  <option value="program-effectiveness">
+                    Program Effectiveness
+                  </option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="feedback-subject" class="form-label">Subject</label>
+                <input
+                  type="text"
+                  id="feedback-subject"
+                  name="feedback-subject"
+                  class="form-control"
+                  placeholder="Brief description of your feedback"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="feedback-message" class="form-label"
+                  >Your Message</label
+                >
+                <textarea
+                  id="feedback-message"
+                  name="feedback-message"
+                  class="form-control"
+                  rows="6"
+                  placeholder="Please share your detailed feedback, suggestions, or concerns"
+                  required
+                ></textarea>
+                <small class="form-help"
+                  >Be as specific as possible to help us understand and address
+                  your feedback effectively.</small
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="rating" class="form-label"
+                  >Overall Experience Rating</label
+                >
+                <select id="rating" name="rating" class="form-control">
+                  <option value="">Rate your experience (optional)</option>
+                  <option value="5">Excellent (5/5)</option>
+                  <option value="4">Good (4/5)</option>
+                  <option value="3">Average (3/5)</option>
+                  <option value="2">Below Average (2/5)</option>
+                  <option value="1">Poor (1/5)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-preference" class="form-label"
+                  >Contact Information</label
+                >
+                <select
+                  id="contact-preference"
+                  name="contact-preference"
+                  class="form-control"
+                >
+                  <option value="anonymous">Submit Anonymously</option>
+                  <option value="email">Provide Email for Follow-up</option>
+                  <option value="phone">Provide Phone for Follow-up</option>
+                  <option value="both">Provide Both Email and Phone</option>
+                </select>
+              </div>
+
+              <div id="contact-details" class="hidden">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label"
+                    >Your Name (Optional)</label
+                  >
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="contact-name"
+                    class="form-control"
+                    placeholder="Your name"
+                  />
+                </div>
+
+                <div class="form-group" id="email-field">
+                  <label for="contact-email" class="form-label"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="contact-email"
+                    class="form-control"
+                    placeholder="your.email@example.com"
+                  />
+                  <small class="form-help"
+                    >We'll use this to follow up on your feedback if
+                    needed</small
+                  >
+                </div>
+
+                <div class="form-group" id="phone-field">
+                  <label for="contact-phone" class="form-label"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    id="contact-phone"
+                    name="contact-phone"
+                    class="form-control"
+                    placeholder="+91-XXXXX-XXXXX"
+                  />
+                  <small class="form-help"
+                    >We'll use this to follow up on your feedback if
+                    needed</small
+                  >
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="location-context" class="form-label"
+                  >Location Context (Optional)</label
+                >
+                <input
+                  type="text"
+                  id="location-context"
+                  name="location-context"
+                  class="form-control"
+                  placeholder="Area/locality where you experienced our services"
+                />
+                <small class="form-help"
+                  >Helps us understand geographic context of your
+                  feedback</small
+                >
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--large">
+                Submit Feedback
+              </button>
+            </form>
+          </div>
+
+          <div style="margin-top: 3rem">
+            <h3>Frequently Asked Questions</h3>
+            <div style="display: grid; gap: 1.5rem; margin-top: 1.5rem">
+              <div
+                style="
+                  background: var(--color-gray-200);
+                  padding: 1.5rem;
+                  border-radius: 0.5rem;
+                "
+              >
+                <h4>How long does it take to get a response?</h4>
+                <p>
+                  We strive to respond to all feedback within 48 hours. Complex
+                  issues may take up to 5 business days for a comprehensive
+                  response.
+                </p>
+              </div>
+
+              <div
+                style="
+                  background: var(--color-gray-200);
+                  padding: 1.5rem;
+                  border-radius: 0.5rem;
+                "
+              >
+                <h4>Can I submit feedback anonymously?</h4>
+                <p>
+                  Yes! You can choose to submit feedback anonymously. However,
+                  providing contact information helps us follow up and provide
+                  better assistance.
+                </p>
+              </div>
+
+              <div
+                style="
+                  background: var(--color-gray-200);
+                  padding: 1.5rem;
+                  border-radius: 0.5rem;
+                "
+              >
+                <h4>What happens to my feedback?</h4>
+                <p>
+                  All feedback is reviewed by our management team. Suggestions
+                  are evaluated for implementation, complaints are investigated,
+                  and compliments are shared with relevant staff.
+                </p>
+              </div>
+
+              <div
+                style="
+                  background: var(--color-gray-200);
+                  padding: 1.5rem;
+                  border-radius: 0.5rem;
+                "
+              >
+                <h4>How do you use the feedback for improvement?</h4>
+                <p>
+                  Feedback is analyzed monthly to identify trends and areas for
+                  improvement. This data directly influences our training
+                  programs, service modifications, and strategic decisions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem">
+            <h3>Alternative Contact Methods</h3>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+              "
+            >
+              <div
+                style="
+                  background: var(--color-teal-300);
+                  color: white;
+                  padding: 1.5rem;
+                  border-radius: 0.5rem;
+                "
+              >
+                <h4>Email</h4>
+                <p><strong>feedback@streetdogcare.org</strong></p>
+                <p>For detailed written feedback</p>
+              </div>
+
+              <div
+                style="
+                  background: var(--color-brown-600);
+                  color: white;
+                  padding: 1.5rem;
+                  border-radius: 0.5rem;
+                "
+              >
+                <h4>Phone</h4>
+                <p><strong>+91-11-XXXX-XXXX</strong></p>
+                <p>Mon-Fri, 10 AM - 5 PM</p>
+              </div>
+
+              <div
+                style="
+                  background: var(--color-orange-500);
+                  color: white;
+                  padding: 1.5rem;
+                  border-radius: 0.5rem;
+                "
+              >
+                <h4>WhatsApp</h4>
+                <p><strong>+91-XXXXX-XXXXX</strong></p>
+                <p>Quick feedback and queries</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              background: var(--color-surface);
+              border: 1px solid var(--color-border);
+              padding: 2rem;
+              border-radius: 0.5rem;
+              margin-top: 2rem;
+            "
+          >
+            <h3>Feedback Statistics</h3>
+            <p>
+              Your feedback makes a difference! Here's how community input has
+              helped us improve:
+            </p>
+
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Feedback Received</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Improvements Made</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">0%</div>
+                <div class="stat-label">Response Rate</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Average Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin: 2rem 0; text-align: center">
+          <span style="color: #d32f2f; font-weight: 700; font-size: 1.2rem">
+            Still in development
+          </span>
+        </div>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
